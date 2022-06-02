@@ -1,16 +1,8 @@
+<script setup>
+import HeadComp from "./components/template/HeaderComp.vue";
+</script>
 <template>
-  <header class="menu-superior">
-    <div class="Menu Esquerdo">
-      <span><RouterLink to="/players">jogadores</RouterLink> </span>
-      <span><RouterLink to="/times">times</RouterLink> </span>
-      <span><RouterLink to="/">Home</RouterLink> </span>
-    </div>
-
-    <div class="Menu Direito">
-      <span>Sair</span>
-    </div>
-  </header>
-
+  <HeadComp />
   <RouterView />
 
   <footer id="footer">footer</footer>
@@ -37,17 +29,6 @@ footer {
   align-items: center;
   padding-left: 2rem;
 }
-
-header span {
-  padding: 0 20px;
-}
-
-header.menu-superior {
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-}
-
 main {
   height: 70%;
 }
