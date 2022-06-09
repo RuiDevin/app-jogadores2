@@ -1,7 +1,9 @@
 <script>
+import { v4 as uuid } from "uuid";
 export default {
   data() {
     return {
+      novo_time: "",
       jogadores: [
         { id: 1, name: "Jogador 1" },
         { id: 2, name: "Jogador 2" },
@@ -9,6 +11,15 @@ export default {
         { id: 4, name: "Jogador 4" },
       ],
     };
+  },
+  methods: {
+    salvar() {
+      const novo_id = uuid();
+      this.jogadores.push({
+        id: novo_id,
+        name: this.novo_jogador,
+      });
+    },
   },
 };
 </script>
@@ -18,28 +29,34 @@ export default {
     <h2>Gerenciamento de jogadores</h2>
   </div>
   <div class="form-input">
-    <input type="text" />
-    <button>Salvar</button>
+    <input type="text" v-model="novo_jogador" placeholder="Jogador" />
+    <button @click="salvar">Salvar</button>
   </div>
-  {{ jogadores }}
-  <div class="list-times">
-    <table>
-      <thead>
-        <tr>
-          <th>ID</th>
-          <th>Nome</th>
-          <th>Açoẽs</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr v-for="time in times" :key="time.id">
-          <td>1</td>
-          <td>Time 1</td>
-          <td>???</td>
-        </tr>
-      </tbody>
-    </table>
+  {{ jogadores }},
+  <div>
+    <div class="list-times">
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Nome</th>
+            <th>Açoẽs</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr v-for="jogadores in jogadores" :key="jogadores.id">
+            <td>{{ jogadores.id }}</td>
+            <td>{{ jogadores.name }}</td>
+            <td>???</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
   </div>
 </template>
 
-<style scoped></style>
+<style scoped>
+.form-input {
+  cursor: pointer;
+}
+</style>

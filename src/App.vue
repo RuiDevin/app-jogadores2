@@ -2,11 +2,10 @@
 import HeadComp from "./components/template/HeaderComp.vue";
 </script>
 <template>
-<HeadComp />
-<main>
-  
-  <RouterView />
-</main>
+  <HeadComp />
+  <main>
+    <RouterView />
+  </main>
 
   <footer id="footer">footer</footer>
 </template>
@@ -32,6 +31,7 @@ footer {
   display: flex;
   align-items: center;
   padding-left: 2rem;
+  
 }
 main {
   height: 70%;

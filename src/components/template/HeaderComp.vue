@@ -1,6 +1,6 @@
 <template>
   <header class="menu-superior">
-    <div class="Menu Esquerdo">
+    <div class="menu-esquerdo">
       <span><RouterLink to="/jogadores">jogadores</RouterLink> </span>
       <span><RouterLink to="/times">times</RouterLink> </span>
       <span><RouterLink to="/">Home</RouterLink> </span>
