@@ -14,7 +14,6 @@ export default {
 </script>
 
 <template>
-  <main id="main">BEM VINDO TIME</main>
   <div class="container">
     <h2>Gerenciamento de jogadores</h2>
   </div>
