@@ -20,6 +20,10 @@ export default {
         name: this.novo_time,
       });
     },
+    excluir(time) {
+      const indice = this.times.indexOf(time);
+      this.times.splice(indice, 1);
+    },
   },
 };
 </script>

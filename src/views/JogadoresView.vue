@@ -20,6 +20,10 @@ export default {
         name: this.novo_jogador,
       });
     },
+    excluir(jogador) {
+      const indice = this.jogador.indexOf(jogador);
+      this.times.splice(indice, 1);
+    },
   },
 };
 </script>
@@ -32,7 +36,6 @@ export default {
     <input type="text" v-model="novo_jogador" placeholder="Jogador" />
     <button @click="salvar">Salvar</button>
   </div>
-  {{ jogadores }},
   <div>
     <div class="list-times">
       <table>
@@ -44,10 +47,10 @@ export default {
           </tr>
         </thead>
         <tbody>
-          <tr v-for="jogadores in jogadores" :key="jogadores.id">
-            <td>{{ jogadores.id }}</td>
-            <td>{{ jogadores.name }}</td>
-            <td>???</td>
+          <tr v-for="jogador in jogadores" :key="jogador.id">
+            <td>{{ jogador.id }}</td>
+            <td>{{ jogador.name }}</td>
+            <td><button @click="excluir(jogador)">excluir</button></td>
           </tr>
         </tbody>
       </table>
